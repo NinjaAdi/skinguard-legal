@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skinwise — Skin Health & Sun Safety</title>
+<meta name="description" content="Skinwise helps you understand your skin with AI-powered scans, product checks, and daily UV guidance. Private, educational, and free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f5f0;--surface:#fff;--surface2:#f1eee7;--txt:#20281f;--txt2:#55604f;--muted:#8b937f;--accent:#3f6b52;--accent-l:#e6efe7;--accent-d:#2c4f3b;--warn-l:#f9efdc;--warn-t:#7a5800;--r:20px;--font-d:'Cormorant',Georgia,serif;--font-b:'Outfit',system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);color:var(--txt);background:var(--bg);-webkit-font-smoothing:antialiased}
+
+/* ── Nav ── */
+nav{position:sticky;top:0;z-index:50;background:rgba(247,245,240,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(50,60,45,.08);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.logo{font-family:var(--font-d);font-size:22px;font-weight:700;color:var(--txt);text-decoration:none}
+.logo span{color:var(--accent)}
+nav a{font-size:14px;font-weight:600;color:var(--txt2);text-decoration:none;margin-left:28px}
+nav a:hover{color:var(--accent)}
+
+/* ── Hero ── */
+.hero{max-width:1200px;margin:0 auto;padding:80px 24px 60px;display:flex;align-items:center;gap:60px}
+.hero-left{flex:1;max-width:600px}
+.hero-left h1{font-family:var(--font-d);font-size:clamp(40px,5.5vw,68px);font-weight:600;line-height:1.06;letter-spacing:-.5px;margin-bottom:18px}
+.hero-left h1 em{font-style:normal;color:var(--accent)}
+.hero-left p{font-size:18px;line-height:1.6;color:var(--txt2);max-width:480px;margin-bottom:28px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 8px 22px -8px rgba(63,107,82,.45);font-family:var(--font-b)}
+.btn-g{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:var(--surface);color:var(--txt);font-size:15px;font-weight:600;text-decoration:none;border:1.5px solid rgba(50,60,45,.16);font-family:var(--font-b)}
+.hero-right{flex:0 0 300px;position:relative}
+.phone{width:260px;height:530px;border-radius:38px;background:#151815;padding:9px;box-shadow:0 40px 80px -20px rgba(40,55,40,.4);margin:0 auto}
+.screen{width:100%;height:100%;border-radius:30px;background:var(--bg);overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:30px 18px 20px}
+.screen .sn{font-family:var(--font-d);font-size:18px;font-weight:700;color:var(--txt)}
+.ring-wrap{width:110px;height:110px;margin:20px 0 12px;position:relative}
+.ring-wrap .rl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-wrap .rn{font-family:var(--font-d);font-size:34px;font-weight:700;color:var(--txt)}
+.ring-wrap .rt{font-size:7px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.gl{margin:10px 6px 0;padding:11px 12px;border-radius:14px;background:var(--surface);border:1px solid rgba(50,60,45,.10);width:100%;box-shadow:0 1px 2px rgba(35,45,30,.05)}
+.gl .t{font-size:10px;font-weight:700;color:var(--txt)}
+.br{height:9px;border-radius:6px;background:var(--surface2);margin:6px 0}
+.br.s{width:62%}
+
+/* ── Features ── */
+.features{max-width:1200px;margin:0 auto;padding:60px 24px 80px}
+.features h2{font-family:var(--font-d);font-size:36px;font-weight:600;text-align:center;margin-bottom:40px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.fcard{background:var(--surface);border:1px solid rgba(50,60,45,.10);border-radius:var(--r);padding:26px 22px;box-shadow:0 1px 2px rgba(35,45,30,.05)}
+.fcard .ico{width:44px;height:44px;border-radius:12px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.fcard h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.fcard p{font-size:14px;color:var(--txt2);line-height:1.55}
+
+/* ── Privacy strip ── */
+.priv{max-width:1200px;margin:0 auto;padding:40px 24px 60px}
+.priv-inner{background:var(--accent-l);border:1px solid rgba(63,107,82,.18);border-radius:var(--r);padding:28px 28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.priv-inner .lock{font-size:36px;flex-shrink:0}
+.priv-inner h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.priv-inner p{font-size:14px;color:var(--txt2);line-height:1.55;max-width:640px}
+
+/* ── AI note ── */
+.ainote{max-width:1200px;margin:0 auto;padding:0 24px 60px}
+.ainote-inner{background:var(--warn-l);border:1px solid rgba(240,164,41,.22);border-radius:var(--r);padding:20px 24px;font-size:14px;color:var(--warn-t);line-height:1.6}
+
+/* ── Footer ── */
+footer{max-width:1200px;margin:0 auto;padding:30px 24px 40px;border-top:1px solid rgba(50,60,45,.10);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+footer .copy{font-size:13px;color:var(--muted)}
+footer a{font-size:13px;color:var(--accent);text-decoration:none;font-weight:600;margin-left:18px}
+
+@media(max-width:768px){
+  .hero{flex-direction:column;padding:50px 20px 40px;gap:40px;text-align:center}
+  .hero-left p{margin:0 auto 28px}
+  .cta-row{justify-content:center}
+  .hero-right{flex:0 0 auto}
+  nav a.hide-m{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Skinwise<span>.</span></a>
+  <div>
+    <a href="#features" class="hide-m">Features</a>
+    <a href="#privacy" class="hide-m">Privacy</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>Know your skin.<br><em>Stay sun-safe.</em></h1>
+    <p>Skinwise helps you learn about your skin and the products you put on it. AI-powered scans, ingredient checks, daily UV guidance, and care plans — all private, all on your phone.</p>
+    <div class="cta-row">
+      <a href="#" class="btn-p">
+        <svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M17.9 8.18H9.71V13.05H14.49C13.93 15.44 11.88 17.09 9.31 17.09C6.19 17.09 3.66 14.56 3.66 11.44C3.66 8.32 6.19 5.79 9.31 5.79C10.68 5.79 11.94 6.29 12.92 7.12L16.43 3.61C14.63 1.96 12.23.88 9.58.88C3.55.88.09 5.87.09 11.44C.09 17.01 3.55 22 9.58 22C15.08 22 19.09 17.99 19.09 12.49C19.09 11.02 18.65 9.57 17.9 8.18Z" fill="white"/></svg>
+        Get on Google Play
+      </a>
+      <a href="#features" class="btn-g">See what it does</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="phone"><div class="screen">
+      <div class="sn">Skinwise</div>
+      <div class="ring-wrap">
+        <svg width="110" height="110" style="transform:rotate(-90deg)"><circle cx="55" cy="55" r="44" fill="none" stroke="var(--accent-l)" stroke-width="8"/><circle cx="55" cy="55" r="44" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-dasharray="276.5" stroke-dashoffset="50"/></svg>
+        <div class="rl"><span class="rn">82</span><span class="rt">SKIN SCORE</span></div>
+      </div>
+      <div class="gl"><div class="t">☀️ UV Index 7 · High</div><div class="br"></div><div class="br s"></div></div>
+      <div class="br" style="margin:10px 6px 0;width:85%"></div>
+      <div class="br s" style="margin:8px 6px 0"></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <h2>What Skinwise does</h2>
+  <div class="fgrid">
+    <div class="fcard"><div class="ico">📸</div><h3>Skin Scans</h3><p>Take a photo of a mole or spot. The AI analyzes it using the ABCDE method dermatologists use and explains what it observed in plain language.</p></div>
+    <div class="fcard"><div class="ico">🧴</div><h3>Product Checks</h3><p>Scan an ingredient label. See which ingredients are flagged by safety databases, what they do, and simpler alternatives worth considering.</p></div>
+    <div class="fcard"><div class="ico">☀️</div><h3>UV & Weather</h3><p>Live UV index, temperature, humidity, and wind for your location — with a sunscreen strength recommendation matched to the conditions. Check today or tomorrow.</p></div>
+    <div class="fcard"><div class="ico">📋</div><h3>Care Plans</h3><p>Build daily routines from your scan results. Set reminders, track streaks, and see how your skin changes over time.</p></div>
+    <div class="fcard"><div class="ico">💬</div><h3>AI Advisor</h3><p>Ask questions in normal language about your results, ingredients, sun safety, or when to see a dermatologist. Answers draw from AAD, NCI, and WHO sources.</p></div>
+    <div class="fcard"><div class="ico">🎨</div><h3>Five Themes</h3><p>Porcelain & Sage, Warm Clay, Rose, Violet, or Onyx & Champagne dark mode. Your phone's system theme never overrides your choice.</p></div>
+  </div>
+</section>
+
+<section id="privacy" class="priv">
+  <div class="priv-inner">
+    <div class="lock">🔒</div>
+    <div>
+      <h3>Privacy, built in</h3>
+      <p>Your photos are analyzed and never stored on our servers. Scan history, care plans, and your profile stay on your device. Location is used only in the moment for weather — never saved. No ads, no tracking, no data sales. Delete everything anytime, in the app or on the web.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ainote">
+  <div class="ainote-inner">
+    <strong>AI disclosure:</strong> analyses and advisor responses in Skinwise are generated by artificial intelligence. AI output is educational information, not medical advice, and can be wrong. Nothing in the app replaces examination by a qualified healthcare professional.
+  </div>
+</section>
+
+<footer>
+  <div class="copy">&copy; 2026 SkinGuard LLC · Dallas, TX · <a href="mailto:skin.guard.llc@gmail.com">skin.guard.llc@gmail.com</a></div>
+  <div>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="consumer-health-data-privacy.html">Health Data Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="delete-account.html">Delete Account</a>
+  </div>
+</footer>
+
+</body>
+</html>
